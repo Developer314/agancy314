@@ -1,0 +1,296 @@
+title: Blog
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+              instructions_position: above
+              listable: true
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              default: 'The Impact of Website Speed on Search Engine Optimization (SEO)'
+              antlers: false
+              hide_display: false
+          -
+            handle: image
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Image
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: date_created
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              format: 'm,d Y'
+              type: date
+              display: 'Date Created'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: short_description
+            field:
+              default: 'A successful e-commerce website requires 10 key features: user-friendly navigation, high-quality product images, secure payment gateway, mobile optimization, fast loading speed, clear product information, easy checkout process, search functionality, customer reviews, and reliable customer support. These features work together to create a seamless shopping experience, driving sales and customer loyalty.'
+              antlers: false
+              type: textarea
+              display: 'Short Description'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+              smart_typography: false
+              save_html: false
+              inline: false
+              toolbar_mode: fixed
+              reading_time: false
+              word_count: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              sets:
+                blog_data:
+                  display: 'Blog Data'
+                  instructions: null
+                  icon: text-formatting-wrap-around-bounding-box
+                  sets:
+                    blog_data:
+                      display: 'Blog Data'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: data
+                          field:
+                            buttons:
+                              - h2
+                              - h3
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                              - removeformat
+                              - quote
+                              - anchor
+                              - image
+                              - table
+                              - h1
+                              - h4
+                              - h5
+                              - h6
+                              - underline
+                              - strikethrough
+                              - small
+                              - superscript
+                              - subscript
+                              - code
+                              - codeblock
+                              - horizontalrule
+                              - alignleft
+                              - aligncenter
+                              - alignright
+                              - alignjustify
+                            smart_typography: false
+                            save_html: false
+                            inline: false
+                            toolbar_mode: fixed
+                            reading_time: false
+                            word_count: false
+                            fullscreen: true
+                            allow_source: true
+                            enable_input_rules: true
+                            enable_paste_rules: true
+                            remove_empty_nodes: false
+                            antlers: false
+                            link_noopener: false
+                            link_noreferrer: false
+                            target_blank: false
+                            always_show_set_button: false
+                            collapse: false
+                            previews: true
+                            type: bard
+                            display: Data
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: '{{data}}'
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    image:
+                      display: Image
+                      instructions: null
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          handle: images
+                          field:
+                            mode: list
+                            container: assets
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: Images
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              {{image}}
+                              <p><img src="{{url}}" /></p>
+                              {{/image}}
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: Content
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: blog_category
+            field: blog_category.blog_category
+  seo:
+    display: SEO
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: meta_title
+            field:
+              input_type: text
+              default: 'The Impact of Website Speed on Search Engine Optimization (SEO)'
+              antlers: false
+              type: text
+              display: 'Meta Title'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: meta_description
+            field:
+              default: 'Looking for top-notch web development services? At Revolve 314 Digital, we specialize in creating custom, high-performance websites tailored to your business needs. Our expert team delivers innovative solutions, ensuring your site is not only visually stunning but also user-friendly and optimized for search engines. Transform your online presence with us today!. Elevate your online presence with our Concrete5 CMS web development services. At Revolve 314 Digital, we specialize in creating custom, user-friendly websites using Concrete5, offering tailored design, robust functionality, and SEO optimization. Our expert team ensures a seamless experience with intuitive content management and stunning, responsive designs. Transform your site with Concrete5 today!. Unlock the full potential of your online presence with our WordPress CMS web development services. At Revolve 314 Digital, we create custom, responsive websites using WordPress, ensuring seamless functionality and stunning design. From theme customization to plugin development and SEO optimization, our expert team delivers tailored solutions that elevate your brand and enhance user experience. Get started with WordPress today!'
+              antlers: false
+              type: textarea
+              display: 'Meta Description'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: meta_tags
+            field:
+              default: 'web development, custom web design, responsive web development, website development services, eCommerce web development, SEO-friendly web design, front-end development, back-end development, full-stack development, professional web developers, web design company, digital solutions, website optimization, user experience design, web development Concrete5, Concrete5 CMS services, Concrete5 website design, custom Concrete5 themes, Concrete5 CMS development, Concrete5 web development solutions, Concrete5 site customization, Concrete5 SEO optimization, Concrete5 CMS experts, Concrete5 development company, Concrete5 web design services, Concrete5 user-friendly websites, Concrete5 eCommerce solutions, Concrete5 CMS support,WordPress web development, custom WordPress design, WordPress CMS services, WordPress theme development, WordPress plugin development, responsive WordPress websites, SEO-friendly WordPress design, WordPress site optimization, WordPress development company, professional WordPress developers, WordPress eCommerce solutions, WordPress website support, WordPress site customization, WordPress web design services'
+              antlers: false
+              type: textarea
+              display: 'Meta Tags'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

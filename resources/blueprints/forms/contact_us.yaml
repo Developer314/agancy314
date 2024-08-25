@@ -1,0 +1,47 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: your_name
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Your Name'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: your_email
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Your Email'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: your_message
+            field:
+              antlers: false
+              type: textarea
+              display: 'Your Message'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required

@@ -1,0 +1,61 @@
+ <!-- Page Title -->
+ <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>{{title}}</h1>
+            <p class="mb-0">{{content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="/index.html">Home</a></li>
+          <li class="current"><a href="{{url}}">{{title}}</a></li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Page Title -->
+
+   <!-- Service Details Section -->
+   <section id="service-details" class="service-details section">
+
+    <div class="container">
+
+      <div class="row gy-5">
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="service-box">
+            <h4>{{section_heading}}</h4>
+            <div class="services-list">
+                {{services}}
+              <a href="#"><i class="bi bi-arrow-right-circle"></i><span>{{service}}</span></a>
+              {{/services}}
+            </div>
+          </div><!-- End Services List -->
+
+          {{service_have_a_question_block:content}}
+
+          
+
+        </div>
+
+        <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+          <img src="{{image}}" alt="{{section_heading}}" class="img-fluid services-img">
+
+
+
+            {{service_description}}
+
+
+         </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Service Details Section -->

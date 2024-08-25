@@ -1,0 +1,9 @@
+{
+    "name": "developer314/agancy314",
+    "extra": {
+        "statamic": {
+            "name": "Agancy314",
+            "description": "Agancy314 starter kit"
+        }
+    }
+}

@@ -1,0 +1,1910 @@
+title: Page
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: short_description
+            field:
+              default: 'Stay ahead of the curve with our e-commerce/cms blog, featuring expert insights, industry trends, and actionable tips to drive online success. From website optimization to marketing strategies, our blog is your go-to resource for e-commerce expertise and inspiration to take your business to the next level.'
+              antlers: false
+              type: textarea
+              display: 'Short Description'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+              smart_typography: false
+              save_html: false
+              inline: false
+              toolbar_mode: fixed
+              reading_time: false
+              word_count: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              sets:
+                home_gallery:
+                  display: 'Home Gallery'
+                  instructions: null
+                  icon: media-computer-screen-tv
+                  sets:
+                    home_gallery:
+                      display: 'Home Gallery'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: title_1
+                          field:
+                            input_type: text
+                            default: 'Unlocking the Power of the Web: Development Strategies and Trends'
+                            antlers: false
+                            type: text
+                            display: 'Title 1'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: title_2
+                          field:
+                            input_type: text
+                            default: 'Image of a creative team designing websites using Concrete5 and WordPress'
+                            antlers: false
+                            type: text
+                            display: 'Title 2'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: gallery_image
+                          field:
+                            max_files: 1
+                            mode: list
+                            container: assets
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'Gallery Image'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Hero Section -->
+                                  <section id="hero" class="hero section dark-background">
+
+                                      <img src="{{gallery_image}}" alt="{{title_1}}" data-aos="fade-in">
+                                
+                                      <div class="container">
+                                        <div class="row">
+                                          <div class="col-lg-10">
+                                            <h2 data-aos="fade-up" data-aos-delay="100">{{title_1}}</h2>
+                                            <p data-aos="fade-up" data-aos-delay="200">{{title_2}}</p>
+                                           
+                                          </div>
+                                          <!--<div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
+                                            <form action="forms/newsletter.php" method="post" class="php-email-form">
+                                              <div class="sign-up-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+                                              <div class="loading">Loading</div>
+                                              <div class="error-message"></div>
+                                              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                                            </form>
+                                          </div>-->
+                                        </div>
+                                      </div>
+                                
+                                    </section><!-- /Hero Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            if:
+                              edit_template: 'equals true'
+                            always_save: true
+                    companies_work_with:
+                      display: 'Companies Work With'
+                      instructions: null
+                      icon: travel-map
+                      fields:
+                        -
+                          handle: companies_work_with
+                          field:
+                            max_files: 6
+                            mode: list
+                            container: assets
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'Companies Work With'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Clients Section -->
+                                  <section id="clients" class="clients section">
+
+                                    <div class="container" data-aos="fade-up">
+
+                                      <div class="row gy-4">
+
+                                          {{companies_work_with}}
+
+                                        <div class="col-xl-2 col-md-3 col-6 client-logo">
+                                          <img src="{{ url }}" alt="{{ alt }}" />
+                                        </div><!-- End Client Item -->
+                                        {{/companies_work_with}}
+
+                                      </div>
+
+                                    </div>
+
+                                  </section><!-- /Clients Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            if:
+                              edit_template: 'equals true'
+                            always_save: true
+                    about_us_section:
+                      display: 'About Us Section'
+                      instructions: null
+                      icon: computer-voice-mail-microphone
+                      fields:
+                        -
+                          handle: about_us_image
+                          field:
+                            max_files: 1
+                            mode: list
+                            container: assets
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'About Us Image'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: title_1
+                          field:
+                            input_type: text
+                            default: 'About Us'
+                            antlers: false
+                            type: text
+                            display: 'Title 1'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: title_2
+                          field:
+                            input_type: text
+                            default: 'Transforming Ideas into Digital Reality'
+                            antlers: false
+                            type: text
+                            display: 'Title 2'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: "At Revolve 314 Digital, we're passionate about crafting innovative digital solutions that drive success for our clients. Our team of expert web developers, designers, and strategists work together to create bespoke websites and applications that exceed expectations."
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: button_text
+                          field:
+                            input_type: text
+                            default: 'Read More'
+                            antlers: false
+                            type: text
+                            display: 'Button Text'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: button_link
+                          field:
+                            input_type: text
+                            default: '#services'
+                            antlers: false
+                            type: text
+                            display: 'Button Link'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: our_points
+                          field:
+                            collapse: false
+                            previews: true
+                            fullscreen: true
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                instructions: null
+                                icon: null
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    instructions: null
+                                    icon: null
+                                    fields:
+                                      -
+                                        handle: icon
+                                        field:
+                                          input_type: text
+                                          default: '<i class="bi bi-clipboard-pulse"></i>'
+                                          antlers: false
+                                          type: text
+                                          display: iCon
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: title
+                                        field:
+                                          input_type: text
+                                          default: 'Our Story'
+                                          antlers: false
+                                          type: text
+                                          display: Title
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: description
+                                        field:
+                                          default: "Founded on the principles of creativity, collaboration, and technical excellence, Revolve 314 Digital has been helping businesses thrive online since [insert year]. Our name reflects our mission: to revolve around our clients' needs, providing tailored solutions that propel their growth."
+                                          antlers: false
+                                          type: textarea
+                                          display: Description
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                            type: replicator
+                            display: 'Our Points'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- About Section -->
+                                  <section id="about" class="about section light-background">
+
+                                    <div class="container" data-aos="fade-up" data-aos-delay="100">
+                                      <div class="row align-items-xl-center gy-5">
+
+                                        <div class="col-xl-5 content">
+                              	          <img class="img-fluid" src="{{about_us_image}}"  alt="{{title_2}}">
+
+                                            <h3>{{title_1}}</h3>
+                                            <h2>{{title_2}}</h2>
+                                            <p>{{description}}</p>
+                                            <a href="{{button_link}}" class="read-more"><span>{{button_text}}</span><i class="bi bi-arrow-right"></i></a>
+                                        </div>
+
+                                        <div class="col-xl-7">
+                                          <div class="row gy-4 icon-boxes">
+
+                                              {{our_points}}
+                                              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                                <div class="icon-box">
+                                                  {{icon}}
+                                                  <h3>{{title}}</h3>
+                                                  <p>{{description}}
+                                </p>
+                                                </div>
+                                              </div> <!-- End Icon Box -->
+                                              {{/our_points}}
+
+                                          </div>
+                                        </div>
+
+                                      </div>
+                                    </div>
+
+                                  </section><!-- /About Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    statistics:
+                      display: Statistics
+                      instructions: null
+                      icon: favorite-award
+                      fields:
+                        -
+                          handle: background_image
+                          field:
+                            max_files: 1
+                            mode: list
+                            container: assets
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'Background Image'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: statistics
+                          field:
+                            collapse: false
+                            previews: true
+                            fullscreen: true
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                instructions: null
+                                icon: null
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    instructions: null
+                                    icon: null
+                                    fields:
+                                      -
+                                        handle: number
+                                        field:
+                                          input_type: text
+                                          default: '50'
+                                          antlers: false
+                                          type: text
+                                          display: Number
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: text
+                                        field:
+                                          input_type: text
+                                          default: Clients
+                                          antlers: false
+                                          type: text
+                                          display: Text
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                            type: replicator
+                            display: Statistics
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Stats Section -->
+                                  <section id="stats" class="stats section dark-background">
+
+                                    <img src="{{background_image}}" alt="" data-aos="fade-in">
+
+                                    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+                                      <div class="row gy-4">
+                                          {{statistics}}
+                                        <div class="col-lg-3 col-md-6">
+                                          <div class="stats-item text-center w-100 h-100">
+                                            <span data-purecounter-start="0" data-purecounter-end="{{number}}" data-purecounter-duration="1" class="purecounter"></span>
+                                            <p>+ {{text}}</p>
+                                          </div>
+                                        </div><!-- End Stats Item -->
+                                        {{/statistics}}
+                                    
+
+                                      </div>
+
+                                    </div>
+
+                                  </section><!-- /Stats Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    services:
+                      display: Services
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            input_type: text
+                            default: Services
+                            antlers: false
+                            type: text
+                            display: Title
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: 'Expert Web Development Services: Custom Solutions, Responsive Design, E-commerce Integration, Web Applications, and Ongoing Support. Transform Your Online Presence with Our Innovative Approach, Technical Expertise, and Collaborative Spirit. Elevate Your Business with Our Comprehensive Web Development Services'
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Services Section -->
+                                <section id="services" class="services section">
+
+                                  <!-- Section Title -->
+                                  <div class="container section-title" data-aos="fade-up">
+                                    <h2>{{title}}</h2>
+                                    <p>{{description}}</p>
+                                  </div><!-- End Section Title -->
+
+                                  <div class="container">
+
+                                    <div class="row gy-4">
+
+                                        {{ collection from="services" }}
+
+                                      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+                                        <div class="service-item d-flex">
+                                          <div class="icon flex-shrink-0">{{icon}}</div>
+                                          <div>
+                                            <h4 class="title"><a href="{{url}}" class="stretched-link">{{title}}</a></h4>
+                                            <p class="description">{{content}}</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- End Service Item -->
+                                       {{/collection}}
+
+                                    
+
+                                    </div>
+
+                                  </div>
+
+                                </section><!-- /Services Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    features:
+                      display: Features
+                      instructions: null
+                      icon: layout-grid-dots
+                      fields:
+                        -
+                          handle: heading
+                          field:
+                            input_type: text
+                            default: Features
+                            antlers: false
+                            type: text
+                            display: Heading
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: 'Expert web development services: Custom solutions, responsive designs, e-commerce integration, CMS development, SEO optimization, mobile-friendly websites, secure coding, fast loading speeds, user-friendly interfaces, scalable solutions, reliable maintenance, and 24/7 support. Delivering high-quality, innovative web solutions that drive business growth and exceed client expectations.'
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: features
+                          field:
+                            collapse: false
+                            previews: true
+                            fullscreen: true
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                instructions: null
+                                icon: null
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    instructions: null
+                                    icon: null
+                                    fields:
+                                      -
+                                        handle: title
+                                        field:
+                                          input_type: text
+                                          default: 'Technical Features'
+                                          antlers: false
+                                          type: text
+                                          display: Title
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: images
+                                        field:
+                                          max_files: 1
+                                          mode: list
+                                          container: assets
+                                          restrict: false
+                                          allow_uploads: true
+                                          show_filename: true
+                                          show_set_alt: true
+                                          type: assets
+                                          display: Images
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: featured_data
+                                        field:
+                                          buttons:
+                                            - h2
+                                            - h3
+                                            - bold
+                                            - italic
+                                            - unorderedlist
+                                            - orderedlist
+                                            - removeformat
+                                            - quote
+                                            - anchor
+                                            - image
+                                            - table
+                                          smart_typography: false
+                                          save_html: false
+                                          inline: false
+                                          toolbar_mode: fixed
+                                          reading_time: false
+                                          word_count: false
+                                          fullscreen: true
+                                          allow_source: true
+                                          enable_input_rules: true
+                                          enable_paste_rules: true
+                                          remove_empty_nodes: false
+                                          antlers: false
+                                          link_noopener: false
+                                          link_noreferrer: false
+                                          target_blank: false
+                                          always_show_set_button: false
+                                          collapse: false
+                                          previews: true
+                                          type: bard
+                                          display: 'Featured Data'
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                            type: replicator
+                            display: Features
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Features Section -->
+                                  <section id="features" class="features section">
+
+                                    <!-- Section Title -->
+                                    <div class="container section-title" data-aos="fade-up">
+                                      <h2>{{heading}}</h2>
+                                      <p>{{description}}</p>
+                                    </div><!-- End Section Title -->
+
+                                    <div class="container">
+
+                                      {{ set count = 0 }}
+                                      {{features}}
+
+                                      {{if count%2}}
+
+
+                                      <div class="row gy-4 align-items-center features-item">
+                                          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                                            <h3>{{title}}</h3>
+                                            {{description}}
+                                            
+                                          </div>
+                                          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+
+
+                                              {{ if image | count > 1}}
+                                              <div class="image-stack">
+                                              {{image}}
+                                              <img src="{{url}}" alt="" class="stack-front">
+                                              {{/image}}
+                                              </div>
+                                              {{else}}
+                                              <img src="{{images}}" alt="" class="stack-front">
+                                              {{/if}}
+                                          </div>
+                                        </div><!-- Features Item -->
+
+                                        {{else}}
+
+
+
+                                        <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+                                          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+                                              {{ if images | count > 1}}
+                                              <div class="image-stack">
+                                              {{images}}
+                                              <img src="{{url}}" alt="" class="stack-front">
+                                              {{/image}}
+                                              </div>
+                                              {{else}}
+                                              <img src="{{images}}" alt="" class="stack-front">
+                                              {{/if}}
+                                          </div>
+                                          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+                                            <h3>{{title}}</h3>
+                                            {{description}}
+                                           
+                                          </div>
+                                        </div><!-- Features Item -->
+
+
+
+
+
+                                        {{/if}}
+
+
+                                        {{count++}}
+
+                                      {{/features}}
+
+
+                                      
+
+                                     
+
+                                      <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+                                        <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+                                          <h3>Service Features</h3>
+                                          <p>Exceptional service delivery: 24/7 support, expert consultation, timely project delivery, budget-friendly solutions, continuous improvement, client-centric approach, transparent communication, regular updates, quality assurance, and customer satisfaction guarantee. Fostering long-term relationships through reliable, flexible, and customer-focused services that exceed expectations and drive business growth.</p>
+                                          <ul>
+                                            <li><i class="bi bi-check"></i> <span>24/7 Support</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Expert Consultation</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Timely Project Delivery</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Budget-Friendly Solutions</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Continuous Improvement</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Client-Centric Approach</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Transparent Communication</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Regular Updates</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Quality Assurance</span></li>
+                                            <li><i class="bi bi-check"></i> <span>Customer Satisfaction Guarantee</span></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+                                          <img src="assets/img/service-feature-1.jpeg" class="img-fluid" alt="">
+                                        </div>
+                                       
+                                      </div><!-- Features Item -->
+
+                                    </div>
+
+                                  </section><!-- /Features Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    portfolio:
+                      display: Portfolio
+                      instructions: null
+                      icon: social-pinterest
+                      fields:
+                        -
+                          handle: section_title
+                          field:
+                            input_type: text
+                            default: Portfolio
+                            antlers: false
+                            type: text
+                            display: 'Section Title'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: "Projects We've Loved: Web Development at Its Best"
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: portfolio_items
+                          field:
+                            collapse: false
+                            previews: true
+                            fullscreen: true
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                instructions: null
+                                icon: null
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    instructions: null
+                                    icon: null
+                                    fields:
+                                      -
+                                        handle: portfolio_category
+                                        field: portfolio_category.portfolio_category
+                                      -
+                                        handle: image
+                                        field:
+                                          mode: list
+                                          container: assets
+                                          restrict: false
+                                          allow_uploads: true
+                                          show_filename: true
+                                          show_set_alt: true
+                                          type: assets
+                                          display: Image
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                            type: replicator
+                            display: 'Portfolio Items'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Portfolio Section -->
+                                  <section id="portfolio" class="portfolio section">
+
+                                    <!-- Section Title -->
+                                    <div class="container section-title" data-aos="fade-up">
+                                      <h2>{{section_title}}</h2>
+                                      <p>{{description}}</p>
+                                    </div><!-- End Section Title -->
+
+                                    <div class="container">
+
+                                      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                                        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                                          <li data-filter="*" class="filter-active">All</li>
+                                      {{portfolio_items}}
+                                      <li data-filter=".filter-{{portfolio_category}}">{{portfolio_category:label}}</li>
+                                      {{/portfolio_items}}
+                                        </ul><!-- End Portfolio Filters -->
+
+                                        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                                         
+
+
+                                          {{portfolio_items}} 
+                                          {{image}}
+                                          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{portfolio_category}}">
+                                                  
+                                            <img src="{{url}}" class="img-fluid" alt="{{portfolio_category}}">
+                                            <div class="portfolio-info">
+                                              <h4>{{portfolio_category:label}}</h4>
+                                              
+                                              <a href="{{url}}" title="{{portfolio_category:label}}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                             
+                                            </div>
+                                               
+                                          </div><!-- End Portfolio Item -->
+                                          {{/image}}
+                                          {{/portfolio_items}}
+
+
+
+                                        </div><!-- End Portfolio Container -->
+
+                                      </div>
+
+                                    </div>
+
+                                  </section><!-- /Portfolio Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    faq:
+                      display: FAQ
+                      instructions: null
+                      icon: alert-help-question
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            input_type: text
+                            default: '<span>Frequently Asked </span><strong>Questions</strong>'
+                            antlers: false
+                            type: text
+                            display: Title
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: "At Revolve 314 Digital, we strive to deliver exceptional web development services. Here are some answers to common questions: Our services include website design, development, e-commerce integration, and maintenance. Typical project timelines range from 2-6 weeks. Yes, we use responsive design to ensure device compatibility. Ongoing maintenance and support are available. E-commerce solutions can be integrated into your website. Pricing varies depending on project scope, but we work within your budget. Our team has experience with various technologies and platforms. Case studies and references are available upon request. If you have further questions, please don't hesitate to contact us!"
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: faqs
+                          field:
+                            collapse: false
+                            previews: true
+                            fullscreen: true
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                instructions: null
+                                icon: null
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    instructions: null
+                                    icon: null
+                                    fields:
+                                      -
+                                        handle: question
+                                        field:
+                                          input_type: text
+                                          default: 'What services does your web development company offer?'
+                                          antlers: false
+                                          type: text
+                                          display: Question
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: answer
+                                        field:
+                                          default: 'Our company offers a range of services including website design, development, e-commerce integration, responsive design, and maintenance.'
+                                          antlers: false
+                                          type: textarea
+                                          display: Answer
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                            type: replicator
+                            display: Faqs
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Faq Section -->
+                                  <section id="faq" class="faq section">
+
+                                    <div class="container">
+
+                                      <div class="row gy-4">
+
+                                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                                          <div class="content px-xl-5">
+                                            <h3>{{title}}</h3>
+                                            <p>
+                                             {{description}}
+                                            </p>
+                                          </div>
+                                        </div>
+
+                                        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+                                          <div class="faq-container">
+                                              {{ increment:again }}
+
+                                          {{faqs}}
+                                          <div class="faq-item  {{ if is_first }} faq-active {{/if}}">
+                                              <h3><span class="num">{{increment}}.</span> <span>{{question}}</span></h3>
+                                              <div class="faq-content">
+                                                <p>{{answer}}</p>
+                                              </div>
+                                              <i class="faq-toggle bi bi-chevron-right"></i>
+                                            </div><!-- End Faq item-->
+                                          {{/faqs}}
+
+
+                                            
+
+                                         
+
+                                          </div>
+
+                                        </div>
+                                      </div>
+
+                                    </div>
+
+                                  </section><!-- /Faq Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    testimonials:
+                      display: Testimonials
+                      instructions: null
+                      icon: text-formatting-all-caps
+                      fields:
+                        -
+                          handle: heading
+                          field:
+                            input_type: text
+                            default: 'What Our Clients Say'
+                            antlers: false
+                            type: text
+                            display: Heading
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: "Don't just take our word for it! Our clients rave about our web development services. Read what they have to say about their experience working with us. From stunning website designs to seamless e-commerce integrations, we deliver high-quality results that drive real success. Check out our testimonials below to see how we've helped businesses like yours thrive online."
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: testimonials
+                          field:
+                            collapse: false
+                            previews: true
+                            fullscreen: true
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                instructions: null
+                                icon: null
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    instructions: null
+                                    icon: null
+                                    fields:
+                                      -
+                                        handle: author_image
+                                        field:
+                                          max_files: 1
+                                          mode: list
+                                          container: assets
+                                          restrict: false
+                                          allow_uploads: true
+                                          show_filename: true
+                                          show_set_alt: true
+                                          type: assets
+                                          display: 'Author Image'
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: author_name
+                                        field:
+                                          input_type: text
+                                          default: 'Saul Goodman'
+                                          antlers: false
+                                          type: text
+                                          display: 'Author Name'
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: author_designation
+                                        field:
+                                          input_type: text
+                                          default: 'Ceo &amp; Founder'
+                                          antlers: false
+                                          type: text
+                                          display: 'Author Designation'
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: testimonial_data
+                                        field:
+                                          default: "Revolve 314 exceeded our expectations in developing our company website! Their team of experts delivered a stunning design, intuitive navigation, and seamless e-commerce integration. Their responsive design ensures our site looks great on all devices, and their ongoing support gives us peace of mind. We've seen a significant increase in online engagement and sales since launching our new site. [Company Name] truly understands the needs of their clients and delivers high-quality results. We highly recommend them for any web development project!"
+                                          antlers: false
+                                          type: textarea
+                                          display: 'Testimonial Data'
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                            type: replicator
+                            display: Testimonials
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Testimonials Section -->
+                                  <section id="testimonials" class="testimonials section light-background">
+
+                                    <div class="container">
+
+                                      <div class="row align-items-center">
+
+                                        <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+                                          <h3>{{heading}}</h3>
+                                          <p>{{description}}
+                                          </p>
+                                        </div>
+
+                                        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+                                          <div class="swiper init-swiper">
+                                            <script type="application/json" class="swiper-config">
+                                              {
+                                                "loop": true,
+                                                "speed": 600,
+                                                "autoplay": {
+                                                  "delay": 5000
+                                                },
+                                                "slidesPerView": "auto",
+                                                "pagination": {
+                                                  "el": ".swiper-pagination",
+                                                  "type": "bullets",
+                                                  "clickable": true
+                                                }
+                                              }
+                                            </script>
+                                            <div class="swiper-wrapper">
+
+                                              {{testimonials}}
+
+                                              <div class="swiper-slide">
+                                                <div class="testimonial-item">
+                                                  <div class="d-flex">
+                                                    <img src="{{author_image}}" class="testimonial-img flex-shrink-0" alt="">
+                                                    <div>
+                                                      <h3>{{author_name}}</h3>
+                                                      <h4>{{author_designation}}</h4>
+                                                      <div class="stars">
+                                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <p>
+                                                    <i class="bi bi-quote quote-icon-left"></i>
+                                                    <span>
+                                                      {{testimonial_data}}
+                                                    </span>
+                                                    <i class="bi bi-quote quote-icon-right"></i>
+                                                  </p>
+                                                </div>
+                                              </div><!-- End testimonial item -->
+
+                                              {{/testimonials}}
+
+                                            
+
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                          </div>
+
+                                        </div>
+
+                                      </div>
+
+                                    </div>
+
+                                  </section><!-- /Testimonials Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    blog_posts:
+                      display: 'Blog Posts'
+                      instructions: null
+                      icon: addon-boxes-stack
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            input_type: text
+                            default: 'Recent Posts'
+                            antlers: false
+                            type: text
+                            display: Title
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: 'Stay Up-to-Date with Our Latest Insights: Recent Blog Posts on Web Development, SEO, and Digital Marketing Trends and Best Practices.'
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: number_of_posts
+                          field:
+                            default: '3'
+                            type: integer
+                            display: 'Number of Posts'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Recent Posts Section -->
+                                  <section id="recent-posts" class="recent-posts section">
+
+                                    <!-- Section Title -->
+                                    <div class="container section-title" data-aos="fade-up">
+                                      <h2>{{title}}</h2>
+                                      <p>{{description}}</p>
+                                    </div><!-- End Section Title -->
+
+                                    <div class="container">
+
+                                      <div class="row gy-4">
+                              	        {{ collection:blog limit="3" as="posts" sort="date_created:desc" }}
+                              {{ posts }}
+                                        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                          <article>
+
+                                            <div class="post-img">
+                                              <img src="{{image}}" alt="{{title}}" class="img-fluid">
+                                            </div>
+
+                                            <p class="post-category">{{blog_category:label}}</p>
+
+                                            <h2 class="title">
+                                              <a href="{{url}}">{{title}}</a>
+                                            </h2>
+
+                                            <div class="d-flex align-items-center">
+                                              
+                                              <div class="post-meta">
+                                               
+                                                <p class="post-date">
+                                                  <time>{{date_created}}</time>
+                                                </p>
+                                              </div>
+                                            </div>
+
+                                          </article>
+                                        </div><!-- End post list item -->
+                                        {{ /posts }}
+
+                              {{/collection:blog}}
+                                       
+
+                                      </div><!-- End recent posts list -->
+
+                                    </div>
+
+                                  </section><!-- /Recent Posts Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    contact_us:
+                      display: 'Contact Us'
+                      instructions: null
+                      icon: home-house
+                      fields:
+                        -
+                          handle: section_title
+                          field:
+                            input_type: text
+                            default: Contact
+                            antlers: false
+                            type: text
+                            display: 'Section Title'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: description
+                          field:
+                            default: 'Contact Our Web Development Team for Your Project Inquiries, Support, and Feedback Anytime, Anywhere'
+                            antlers: false
+                            type: textarea
+                            display: Description
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: location_map
+                          field:
+                            default: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31562.565722108287!2d76.8473307567247!3d8.565127841926492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05be54c4adee2d%3A0x6367a27de8baa463!2sKazhakkoottam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1723823556428!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                            antlers: false
+                            type: textarea
+                            display: 'Location Map'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: contact_details
+                          field:
+                            collapse: false
+                            previews: true
+                            fullscreen: true
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                instructions: null
+                                icon: null
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    instructions: null
+                                    icon: null
+                                    fields:
+                                      -
+                                        handle: icon
+                                        field:
+                                          input_type: text
+                                          default: '<i class="bi bi-telephone"></i>'
+                                          antlers: false
+                                          type: text
+                                          display: iCon
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: title
+                                        field:
+                                          input_type: text
+                                          default: 'Call Us'
+                                          antlers: false
+                                          type: text
+                                          display: Title
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                                      -
+                                        handle: data
+                                        field:
+                                          buttons:
+                                            - h2
+                                            - h3
+                                            - bold
+                                            - italic
+                                            - unorderedlist
+                                            - orderedlist
+                                            - removeformat
+                                            - quote
+                                            - anchor
+                                            - image
+                                            - table
+                                          smart_typography: false
+                                          save_html: false
+                                          inline: false
+                                          toolbar_mode: fixed
+                                          reading_time: false
+                                          word_count: false
+                                          fullscreen: true
+                                          allow_source: true
+                                          enable_input_rules: true
+                                          enable_paste_rules: true
+                                          remove_empty_nodes: false
+                                          antlers: false
+                                          link_noopener: false
+                                          link_noreferrer: false
+                                          target_blank: false
+                                          always_show_set_button: false
+                                          collapse: false
+                                          previews: true
+                                          type: bard
+                                          display: Data
+                                          listable: hidden
+                                          instructions_position: above
+                                          visibility: visible
+                                          replicator_preview: true
+                                          hide_display: false
+                            type: replicator
+                            display: 'Contact Details'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            default: |-
+                              <!-- Contact Section -->
+                                  <section id="contact" class="contact section">
+
+                                    <!-- Section Title -->
+                                    <div class="container section-title" >
+                                      <h2>{{section_title}}</h2>
+                                      <p>{{description}}</p>
+                                    </div><!-- End Section Title -->
+
+                                    <div class="container" >
+
+                                      <div class="row gy-4">
+
+                                        <div class="col-lg-6">
+
+                                          <div class="row gy-4">
+                                            
+                                            {{contact_details}}
+
+                                            <div class="col-md-6">
+                                              <div class="info-item" >
+                                                {{icon}}
+                                                <h3>{{title}}</h3>
+                                                {{data}}
+                                                
+                                              </div>
+                                            </div><!-- End Info Item -->
+
+                                           
+                                            {{/contact_details}}
+
+                                          </div>
+
+                                        </div>
+
+                                        <div class="col-lg-6">
+                              	          {{location_map}}
+                                         
+                                        </div><!-- End Contact Form -->
+
+                                      </div>
+
+                                    </div>
+
+                                  </section><!-- /Contact Section -->
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                    content_block:
+                      display: 'Content Block'
+                      instructions: null
+                      icon: layout-display-split-quarters
+                      fields:
+                        -
+                          handle: bard_content
+                          field:
+                            buttons:
+                              - h2
+                              - h3
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                              - removeformat
+                              - quote
+                              - anchor
+                              - image
+                              - table
+                              - h1
+                              - h4
+                              - h5
+                              - h6
+                              - underline
+                              - strikethrough
+                              - small
+                              - superscript
+                              - subscript
+                              - code
+                              - codeblock
+                              - horizontalrule
+                              - alignleft
+                              - aligncenter
+                              - alignright
+                              - alignjustify
+                            smart_typography: false
+                            save_html: false
+                            inline: false
+                            toolbar_mode: fixed
+                            reading_time: false
+                            word_count: false
+                            fullscreen: true
+                            allow_source: true
+                            enable_input_rules: true
+                            enable_paste_rules: true
+                            remove_empty_nodes: false
+                            antlers: false
+                            link_noopener: false
+                            link_noreferrer: false
+                            target_blank: false
+                            always_show_set_button: false
+                            collapse: false
+                            previews: true
+                            type: bard
+                            display: 'Bard Content'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: edit_template
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Edit Template'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: template
+                          field:
+                            antlers: true
+                            type: textarea
+                            display: Template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            always_save: true
+                            if:
+                              edit_template: 'equals true'
+                            default: |-
+                              <section  class="content section">
+
+                                  <!-- Section Title -->
+                                  <div class="container">
+                                   {{bard_content}}
+                                  </div><!-- End Section Title -->
+
+                                 
+
+                                </section>
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: Content
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+  seo:
+    display: SEO
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: meta_title
+            field:
+              input_type: text
+              default: 'Revolve 314 Digital - Expert Web Development & Digital Marketing Solutions'
+              antlers: true
+              type: text
+              display: 'Meta Title'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: meta_description
+            field:
+              default: 'Looking for top-notch web development services? At Revolve 314 Digital, we specialize in creating custom, high-performance websites tailored to your business needs. Our expert team delivers innovative solutions, ensuring your site is not only visually stunning but also user-friendly and optimized for search engines. Transform your online presence with us today!. Elevate your online presence with our Concrete5 CMS web development services. At Revolve 314 Digital, we specialize in creating custom, user-friendly websites using Concrete5, offering tailored design, robust functionality, and SEO optimization. Our expert team ensures a seamless experience with intuitive content management and stunning, responsive designs. Transform your site with Concrete5 today!. Unlock the full potential of your online presence with our WordPress CMS web development services. At Revolve 314 Digital, we create custom, responsive websites using WordPress, ensuring seamless functionality and stunning design. From theme customization to plugin development and SEO optimization, our expert team delivers tailored solutions that elevate your brand and enhance user experience. Get started with WordPress today!'
+              antlers: true
+              type: textarea
+              display: 'Meta Description'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: meta_tags
+            field:
+              default: 'web development, custom web design, responsive web development, website development services, eCommerce web development, SEO-friendly web design, front-end development, back-end development, full-stack development, professional web developers, web design company, digital solutions, website optimization, user experience design, web development Concrete5, Concrete5 CMS services, Concrete5 website design, custom Concrete5 themes, Concrete5 CMS development, Concrete5 web development solutions, Concrete5 site customization, Concrete5 SEO optimization, Concrete5 CMS experts, Concrete5 development company, Concrete5 web design services, Concrete5 user-friendly websites, Concrete5 eCommerce solutions, Concrete5 CMS support,WordPress web development, custom WordPress design, WordPress CMS services, WordPress theme development, WordPress plugin development, responsive WordPress websites, SEO-friendly WordPress design, WordPress site optimization, WordPress development company, professional WordPress developers, WordPress eCommerce solutions, WordPress website support, WordPress site customization, WordPress web design services'
+              antlers: true
+              type: textarea
+              display: 'Meta Tags'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
