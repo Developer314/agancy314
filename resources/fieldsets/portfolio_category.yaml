@@ -1,0 +1,24 @@
+title: 'Portfolio Category'
+fields:
+  -
+    handle: portfolio_category
+    field:
+      options:
+        wordpress: Wordpress
+        concrete: Concrete5
+        statamic: Statamic
+        shopify: Shopify
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      default: wordpress
+      type: select
+      display: 'Portfolio Category'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

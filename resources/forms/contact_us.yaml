@@ -1,0 +1,7 @@
+title: 'Contact Us'
+email:
+  -
+    id: m092hr0n
+    to: manup.rav@gmail.com
+    subject: 'Contact from Revolve Site'
+    mailer: smtp

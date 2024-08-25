@@ -1,0 +1,27 @@
+title: 'Blog Category'
+fields:
+  -
+    handle: blog_category
+    field:
+      options:
+        cms: CMS
+        ecommerce: E-Commerce
+        shopify: Shopify
+        statamic: Statamic
+        general: General
+        wordpress: Wordpress
+        concrete: Concrete5
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      default: general
+      type: select
+      display: 'Blog Category'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
